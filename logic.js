@@ -9,7 +9,7 @@ new Swiper('.headerContainer', {
 		type: 'progressbar',
 	},
 	slidesPerView: 1,
-	// spaceBetween: 30,
+	spaceBetween: 20, 
 	loop: true,
 
 
