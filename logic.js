@@ -8,6 +8,18 @@ new Swiper('.headerContainer', {
 		el:'.swiper-pagination',
 		type: 'progressbar',
 	},
+	slidesPerView: 1,
+	// spaceBetween: 30,
+	loop: true,
+
+
+	// autoplay: {
+	// 	delay: 3000, 
+	// 	disableOnInteraction: false, //Отключить автопрокрутку после взаимодействия
+	// },
+
+	speed: 1100,
+
 
 
 });
