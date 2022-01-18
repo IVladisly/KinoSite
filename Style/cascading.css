@@ -2,57 +2,58 @@
 	margin: 0;
 	padding: 0;
 
-	font-size: 18px;
+	font-size: 32px;
+	line-height: 1.4;
+	font-size: calc(14px + 17 * (100vw / 1600));
+
 	font-family: sans-serif;
 	text-decoration: none;
-	color: yellow;
+	color: var(--TextColor);
 	box-sizing: border-box;
-
-
-
 }
+
+h1, h2, h3, p {
+	font-size: calc(15px + 17 * (100vw / 1600));
+}
+
 :root {
-	--DarkGray: #2d2d2d; 
+	--DarkGray: #11171b; 
 	--DarkBlue: #152027;
+	--RubyRed: #a30f1f;
+	--TextColor: #ece2e2;
 }
 body {
 	background-color: var(--DarkBlue);
-
-
-
-
 }
 
 .headerHEADER {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 2000px;
-	height: 80vh;
-	min-height: 740px;
+	height: 35vw;
+	max-height: 700px;
+	background-color: var(--DarkGray);
 }
+
 .headerContainer {
 	height: 100%;
 	width: 100%;
-	padding: 30px 15% 30px 15%;
+	padding: 1% 20%;
 	margin: 0 auto;
 	overflow-x: hidden; 
 }
-
-.header_front {
+.Header__slide {
+	max-width: 100%;
 	background-size: cover;
+	border-radius: 20px;
+
 	overflow: hidden;
 
-	border-radius: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	
 }
-
-.about {
-	display: none;
-	color: #fff;
-	width: 100%;
-	height: 200px;
-	background-color: yellow;
-}
-
 .swiper-slide {
 	opacity: .3;
 	transition: 1.2s;
@@ -65,40 +66,105 @@ body {
 }
 
 
+/* Информационная панель о фильме ШАПКА */
+.HeaderSlide_info {
+	z-index: 100;
+	width: 100%;
+	height: 20%;
+	transform: translateY(0);
+
+	display: grid;
+	align-items: center;
+
+	grid-template-areas: "title bar pointer";
 
 
+	background-color: var(--RubyRed);
+	opacity: 85%;
+	transition: .6s;
+}
+.Header__slide:hover .HeaderSlide_info {
+	transform: translateY(0);
+	opacity: 85%;
+}
+.Title {
+	font-size: 1em;
+	margin: .2em 0 .2em .4em ;
+	grid-area: title;
+}
+
+.bar {
+	grid-area: bar;
+
+	display: block;
+	height: .2em;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-top: .2em;
+	
+	width: 90%;
+
+	background-color: var(--DarkBlue);
+	
+}
+.rating {
+	background-color: #2aee28;
+	height: 100%;
+	float: left;
+}
+.pointer {
+	grid-area: pointer;
+	display: flex;
+	justify-content: right;
+
+	
+}
+.follow, .dislike, .arrowUp {
+	background-size: cover;
+	width: .9em;
+	height: .9em;
+	margin-right: 6%;
+	transition: .3s;
+}
+.follow {
+	background-image: url('../source/Icons/follow_off.png');
+}
+.dislike {
+	background-image: url('../source/Icons/dislike_off.png');
+}
+.arrowUp {
+	background-image: url('../source/Icons/arrow_up.png');
+}
+.follow:hover {
+	background-image: url('../source/Icons/follow_on.png');
+}
+.dislike:hover {
+	background-image: url('../source/Icons/dislike_on.png');
+}
+.arrowUp:hover {
+	transform: translateY(-10%);
+}
+
+/* Content */
 
 .header__bottomLine {
 	width: 100%;
-	height: 60px;
-	background-color: #67254c;
+	height: 2vw;
+	background-color: var(--RubyRed);
 }
 .content {
+	margin: 0 auto;
 	width: 100%;
+	max-width: 1600px; 
 	height: 1900px;
 	background-color: var(--DarkBlue);
 }
-@media (max-width: 1400px) {
-	.headerHEADER {
-		height: 70vh;
-		min-height: 550px;
+
+@media (max-width: 720px) {
+	.HeaderSlide_info {
+		height: 100%;
 	}
-	.headerContainer {
-		padding: 0;
-	}
-	.header_front {
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-	.header__bottomLine {
-	height: 5vh;
-}
 }
 
-@media (max-width: 800px) {
-	.headerHEADER {
-		height: 30vh;
-		min-height: 200px;
-	}
-}
+
+
