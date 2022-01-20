@@ -13,13 +13,13 @@
 }
 
 h1, h2, h3, p {
-	font-size: calc(15px + 17 * (100vw / 1600));
+	font-size: calc(10px + 17 * (100vw / 1600));
 }
 
 :root {
 	--DarkGray: #11171b; 
 	--DarkBlue: #152027;
-	--RubyRed: #a30f1f;
+	--RubyRed: #9f173d;
 	--TextColor: #ece2e2;
 }
 body {
@@ -54,17 +54,16 @@ body {
 	align-items: flex-end;
 	
 }
-.swiper-slide {
+.headerContainer .swiper-slide {
 	opacity: .3;
 	transition: 1.2s;
 	transform: scale(0.8);
 }
-.swiper-slide-active {
+.headerContainer .swiper-slide-active {
 	opacity: 1;
 	transition: 1.2s;
 	transform: scale(1);
 }
-
 
 /* Информационная панель о фильме ШАПКА */
 .HeaderSlide_info {
@@ -152,17 +151,69 @@ body {
 	height: 2vw;
 	background-color: var(--RubyRed);
 }
+/* Content  */
 .content {
 	margin: 0 auto;
+	padding: .6em .8em; 
 	width: 100%;
 	max-width: 1600px; 
 	height: 1900px;
 	background-color: var(--DarkBlue);
 }
 
-@media (max-width: 720px) {
+.recomendedFilm_Slider {
+	display: flex;
+	align-items: center;
+	
+}
+.recomendedBlock__inner {
+	margin: 1.2em 0;
+	width: 100%;
+	height: 16vw;
+	overflow: hidden;
+	
+	
+}
+
+.recomendedFilm {
+	background-size: cover;
+	border-radius: .4em;
+	
+
+}
+.navigationRecomended {
+	width: 400px;
+	height: 400px;
+	background-color: #fff;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+	color: black;
+	position: absolute;
+
+}
+.swiper-button-next::after {
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 740px) {
 	.HeaderSlide_info {
 		height: 100%;
+	}
+	.recomendedBlock__inner {
+		height: 30vw;
 	}
 }
 
