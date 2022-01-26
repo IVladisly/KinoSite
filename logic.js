@@ -9,11 +9,6 @@ new Swiper('.headerContainer', {
 	loop: true,
 
 
-	autoplay: {
-		delay: 3000, 
-		disableOnInteraction: false, //Отключить автопрокрутку после взаимодействия
-	},
-
 	speed: 1100,
 
 
@@ -31,7 +26,7 @@ new Swiper ('.recomendedBlock__inner', {
 	speed: 600,
 
 	breakpoints: {
-		760: {
+		840: {
 			slidesPerView: 7,
 			slidesPerGroup: 6,
 		},
