@@ -275,6 +275,7 @@ body {
 	}
 	.recomendedFilm {
 	border-radius: .4em;
+	overflow: hidden;
 	
 	}
 }
@@ -304,6 +305,7 @@ body {
 	}
 	.recomendedFilm {
 	border-radius: .4em;
+	overflow: hidden;
 	
 	}
 
