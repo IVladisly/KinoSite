@@ -282,14 +282,14 @@ body {
 		"Bar Bar"
 		"genre genre";
 	}
-	.filmIMG__inner:hover {
+	/* .aboutFilm:hover, .filmIMG__inner:hover {
 		transform: none;
-	}
-	.aboutFilm:hover {
-		transform: none;
-	}
+	} */
 	.recomendedBlock__inner {
 		height: 22vw;
+	}
+	.recomendedFilm, .filmIMG__inner {
+		border-radius: 0.4em;
 	}
 }
 
@@ -315,10 +315,8 @@ body {
 	.film_raiting, .genre, .duration, .Bar {
 		display: none;
 	}
-	.recomendedFilm {
-	
-	
-	
+	.recomendedFilm, .filmIMG__inner {
+		border-radius: 0.4em;
 	}
 
 }
