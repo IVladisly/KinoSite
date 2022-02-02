@@ -7,20 +7,25 @@
 	font-size: calc(14px + 17 * (100vw / 1600));
 
 	text-decoration: none;
-	color: var(--TextColor);
 	box-sizing: border-box;
 }
 
-h1, h2, h3, p {
-	font-size: calc(6px + 15 * (100vw / 1600));
+h1, h2, h3 {
+	font-size: calc(7px + 15 * (100vw / 1600));
+	color: var(--TitleColor);
+}
+p {
+	font-size: calc(6px + 14 * (100vw / 1600));
+	color: var(--TextColor);
 }
 
 :root {
 	--DarkGray: #11171b; 
-	--DarkBlueOpacity: #28343bc9;
+	--DarkBlueOpacity: #11181dc9;
 	--DarkBlue: #152027;
 	--RubyRed: #9f173d;
-	--TextColor: #ece2e2;
+	--TextColor: #b6b6b6;
+	--TitleColor: #ece2e2;
 	--GoodRaiting: #1dee1b;
 
 	--TransitionOptimal: 0.5s;
@@ -87,7 +92,7 @@ body {
 	opacity: 85%;
 	transition: .6s;
 }
-.Header__slide:hover .HeaderSlide_info {
+.swiper-slide-active:hover .HeaderSlide_info {
 	transform: translateY(0);
 	opacity: 85%;
 }
@@ -164,17 +169,17 @@ body {
 	max-width: 1600px; 
 	height: 1900px;
 	background-color: var(--DarkBlue);
-}
 
+}
 .recomendedFilm_Slider {
 	display: flex;
 	align-items: center;
 	
 }
 .recomendedBlock__inner {
-	margin: 1.2em 0;
+	margin: .8em 0 1.2em;
 	width: 100%;
-	height: 16vw;
+	height: 19vw;
 	overflow: hidden;
 	
 	
@@ -182,7 +187,7 @@ body {
 
 .recomendedFilm {
 	overflow: hidden;
-	border-radius: .8vw;
+	border-radius: .4em;
 	
 }
 .filmIMG__inner {
@@ -196,12 +201,6 @@ body {
 }
 .filmIMG__inner:hover {
 	transform: scale(1.1);
-}
-
-.navigationRecomended {
-	width: 400px;
-	height: 400px;
-	background-color: #fff;
 }
 .aboutFilm {
 	z-index: 100;
@@ -219,14 +218,14 @@ body {
 	grid-template-rows: 50% 15% 25% 10%;
 	grid-template-columns: 3fr 1fr;
 	grid-template-areas: 
-	"Title followFilm"
+	"Title Title"
 	"Bar Bar"
 	"genre genre"
-	"duration duration";
+	"duration followFilm";
 
 }
 .aboutFilm p {
-	font-size: calc(5px + 12 * (100vw / 1600));
+	font-size: calc(6px + 13 * (100vw / 1600));
 	line-height: 0.9em;
 	align-items: center;
 }
@@ -243,6 +242,9 @@ body {
 }
 .title {
 	grid-area: Title;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .genre {
 	grid-area: genre;
@@ -253,8 +255,22 @@ body {
 }
 
 
+.AboutUsInfoBlock {
+	margin-bottom: 1.2em;
+}
+.AboutUsInfoBlock h2 {
+	margin-bottom: 0.4em;
+}
 
-@media (max-width: 1440px) {
+@media (min-width: 2000px) {
+	.recomendedBlock__inner {
+		max-height: 310px;
+		max-width: 100%;
+
+	}
+}
+
+@media (max-width: 1600px) {
 	.aboutFilm {
 		opacity: 0;
 		height: 100%;
@@ -272,27 +288,24 @@ body {
 	.aboutFilm:hover {
 		transform: none;
 	}
-	.recomendedFilm {
-	
-	
-	
+	.recomendedBlock__inner {
+		height: 22vw;
 	}
 }
 
 
-@media (max-width: 840px) {
+@media (max-width: 850px) {
 	.HeaderSlide_info {
 		height: 100%;
 	}
 	.recomendedBlock__inner {
-		height: 30vw;
+		height: 43vw;
 	}
 	.aboutFilm {
 		opacity: 1;
-		height: auto;
+		height: 30%;
 		padding-bottom: 0;
-		min-height: 30%;
-		overflow-y: hidden;
+		overflow: hidden;
 		align-items: center;
 		grid-template-rows: 100%;
 		grid-template-columns: 100%;

@@ -20,16 +20,20 @@ new Swiper ('.recomendedBlock__inner', {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
-	slidesPerView: 4,
-	slidesPerGroup: 4,
-	spaceBetween: 10,
+	slidesPerView: 3,
+	slidesPerGroup: 2,
+	spaceBetween: 15,
 	speed: 600,
 
 	breakpoints: {
-		840: {
+		850: {
+			slidesPerView: 6.3,
+			slidesPerGroup: 5,
+			spaceBetween: 15,
+		},
+		2000: {
 			slidesPerView: 7,
 			slidesPerGroup: 6,
-			spaceBetween: 20,
 		},
 
 	},
