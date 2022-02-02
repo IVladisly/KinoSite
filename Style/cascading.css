@@ -182,11 +182,10 @@ body {
 
 .recomendedFilm {
 	overflow: hidden;
-	border-radius: .4em;
+	border-radius: .8vw;
 	
 }
 .filmIMG__inner {
-	border-radius: 0.4em;
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -274,8 +273,8 @@ body {
 		transform: none;
 	}
 	.recomendedFilm {
-	border-radius: .4em;
-	overflow: hidden;
+	
+	
 	
 	}
 }
@@ -304,8 +303,8 @@ body {
 		display: none;
 	}
 	.recomendedFilm {
-	border-radius: .4em;
-	overflow: hidden;
+	
+	
 	
 	}
 

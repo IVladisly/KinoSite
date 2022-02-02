@@ -22,13 +22,14 @@ new Swiper ('.recomendedBlock__inner', {
 	},
 	slidesPerView: 4,
 	slidesPerGroup: 4,
-	spaceBetween: 20,
+	spaceBetween: 10,
 	speed: 600,
 
 	breakpoints: {
 		840: {
 			slidesPerView: 7,
 			slidesPerGroup: 6,
+			spaceBetween: 20,
 		},
 
 	},
