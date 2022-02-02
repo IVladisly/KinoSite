@@ -290,6 +290,7 @@ body {
 	}
 	.recomendedFilm, .filmIMG__inner {
 		border-radius: 0.4em;
+		overflow: hidden;
 	}
 }
 
@@ -317,6 +318,7 @@ body {
 	}
 	.recomendedFilm, .filmIMG__inner {
 		border-radius: 0.4em;
+		overflow: hidden;
 	}
 
 }
