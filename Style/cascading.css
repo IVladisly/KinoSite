@@ -408,6 +408,9 @@ body {
 		border-radius: 0.4em;
 		overflow: hidden;
 	}
+	.swiper-button-next, .swiper-button-prev {
+		display: none;
+	}
 }
 
 
