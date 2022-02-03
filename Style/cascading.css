@@ -34,6 +34,7 @@ body {
 	background-color: var(--DarkBlue);
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
+	overflow-x: hidden;
 
 }
 
@@ -288,6 +289,7 @@ body {
 	max-width: 1600px;
 	padding: .8em .3em; 
 	margin: 0 auto;
+	overflow: hidden;
 
 	border-top: 2px solid #fff2;
 
