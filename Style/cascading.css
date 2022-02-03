@@ -164,9 +164,9 @@ body {
 /* ============================Content============================ */
 .content {
 	margin: 0 auto;
-	padding: .6em .8em; 
+	padding: .6em 1em; 
 	width: 100%;
-	max-width: 1600px; 
+	max-width: 1650px; 
 	height: auto;
 	background-color: var(--DarkBlue);
 
@@ -329,7 +329,7 @@ body {
 	grid-area: subscribeButton;
 }
 .bottomButtonSubscribe p {
-		color: var(--TitleColor);
+	color: var(--TitleColor);
 }
 .bottomButtonSubscribe:hover {
 	opacity: 1;
