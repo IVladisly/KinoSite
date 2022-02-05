@@ -27,8 +27,10 @@ p {
 	--TextColor: #b6b6b6;
 	--TitleColor: #ece2e2;
 	--GoodRaiting: #1dee1b;
+	--Popup: #152027c9;
 
 	--TransitionOptimal: 0.5s;
+	--TransitionMinimal: 0.3s;
 }
 body {
 	background-color: var(--DarkBlue);
@@ -37,7 +39,161 @@ body {
 	overflow-x: hidden;
 
 }
+ /* ======================head====================== */
 
+
+.mainHeadBlock {
+	z-index: 100;
+	width: 100%;
+	height: 3vw;
+	background-color: var(--DarkBlueOpacity);
+	position: fixed;
+
+}
+.header {
+	width: 100%;
+	max-width: 1600px;
+	height: 100%;
+
+	margin: 0 auto;
+	padding: 0 .1em;
+
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	grid-template-columns: 5% 75% 10% 5% 5%;
+	grid-template-rows: 100%;
+	grid-template-areas:"logo none empty search user";
+
+	
+}
+.ul {
+	color:  var(--TextColor);
+	font-size: .8em;
+	cursor: pointer;
+	grid-area: empty;
+	transition: var(--TransitionMinimal);
+}
+.ul:hover {
+	color: #fff;
+}
+.logo {
+	width: 2em;
+	height: 100%;
+	max-width: 100%;
+	object-fit: contain;
+
+	grid-area: logo;
+}
+.logoLink {
+	max-width: 100%;
+	height: 100%;
+}
+
+.searchMainBlock {
+	width: 1.7vw;
+	height: 100%;
+	grid-area: search;
+	cursor: pointer;
+}
+#search_icon {
+	max-width: 100%;
+	height: 100%;
+	transition: var(--TransitionMinimal);
+	will-change: transform;
+	transform-origin: center center;
+	object-fit: contain;
+}
+#search_icon:hover {
+	transform: scale(1.1);
+}
+.profile {
+	width: 2vw;
+	height: 100%;
+	grid-area: user;
+	cursor: pointer;
+}
+#user_icon {
+	max-width: 100%;
+	height: 100%;
+	transition: var(--TransitionMinimal);
+	object-fit: contain;
+}
+#user_icon:hover {
+	transform: scale(1.1);
+}
+
+
+
+
+.popupSearch {
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+	background-color: var(--Popup);
+	transition: var(--TransitionMinimal);
+	opacity: 0;
+	visibility: hidden;
+	
+}
+.popupSearch.open {
+	opacity: 1;
+	visibility: visible;
+}
+.popupContent {
+	width: 100%;
+	max-width: 1600px;
+	height: 80%;
+	position: relative;
+	transition: var(--TransitionMinimal);
+	transform: translate(0, -100%);
+}
+.popupContent.open {
+	transform: translate(0);
+}
+.searchInput {
+	width: 100%;
+	height: 4vw;
+	padding-left: .5em;
+	background-color: var(--DarkBlue);
+	color: var(--TextColor);
+	border-radius: .8em;
+	border: .04em solid var(--TextColor);
+}
+.popupClose {
+	cursor: pointer;
+	position: absolute;
+	color: var(--TextColor);
+	transition: var(--TransitionMinimal);
+	right: -2em;
+	top: -2em;
+}
+.popupClose:hover {
+	color: var(--TitleColor);
+	transform: scale(1.2);
+}
+.searchMenu {
+	color: var(--TextColor);
+	margin-top: 2em;
+	cursor: pointer;
+}
+.searchMenu ol {
+	margin-bottom: .2em;
+	display: block;
+}
+.searchMenu ol.hide {
+	display: none;
+}
+mark {
+	background-color: var(--RubyRed);
+}
+
+/* ======================/head====================== */
 .headerHEADER {
 	margin: 0 auto;
 	width: 100%;
@@ -315,7 +471,8 @@ body {
 }
 .bottomUl p:hover {
 	color: var(--RubyRed);
-	cursor: pointer;transition: .3s;
+	cursor: pointer;
+	transition: var(--TransitionMinimal);
 }
 .bottomButtonSubscribe {
 	width: 70%;
@@ -353,7 +510,7 @@ body {
 .socialNetwork img {
 	max-width: 100%;
 	object-fit: cover;
-	transition: .3s;
+	transition: var(--TransitionMinimal);
 	opacity: .5;
 }
 .socialNetwork img:hover{
@@ -447,6 +604,19 @@ body {
 	}
 	.mainBottomBlock {
 		height: 40vw;
+	}
+
+	.bottomStageTop {
+	grid-template-areas: 
+	"link subscribeButton social"
+	"link subscribeButton social"
+	"link subscribeButton social";
+	}
+	.social {
+		flex-direction: column;
+	}
+	.socialNetwork {
+		width: 30%;
 	}
 
 }
