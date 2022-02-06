@@ -122,17 +122,12 @@ body {
 #user_icon:hover {
 	transform: scale(1.1);
 }
-
-
-
-
 .popupSearch {
 	z-index: 1000;
 	width: 100%;
 	height: 100%;
 	position: fixed;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	padding: 1em;
 	background-color: var(--Popup);
@@ -167,11 +162,10 @@ body {
 }
 .popupClose {
 	cursor: pointer;
-	position: absolute;
+	float: right;
+    margin: 1em;
 	color: var(--TextColor);
 	transition: var(--TransitionMinimal);
-	right: -2em;
-	top: -2em;
 }
 .popupClose:hover {
 	color: var(--TitleColor);
@@ -181,13 +175,21 @@ body {
 	color: var(--TextColor);
 	margin-top: 2em;
 	cursor: pointer;
+	padding-bottom: .5em;
+	height: 79%;
+	overflow-y: hidden;
 }
 .searchMenu ol {
 	margin-bottom: .2em;
 	display: block;
+	width: 40%;
 }
 .searchMenu ol.hide {
 	display: none;
+}
+.searchMenu ol:hover {
+	background-color: var(--RubyRed);
+	color: var(--TitleColor);
 }
 mark {
 	background-color: var(--RubyRed);
@@ -617,6 +619,25 @@ mark {
 	}
 	.socialNetwork {
 		width: 30%;
+	}
+	.mainHeadBlock {
+		height: 15vw;
+	}
+	.searchInput {
+		height: 10vw;
+	}
+	.header {
+		grid-template-columns: 25% 25% 25% 25%;
+		grid-template-areas:"logo empty search user";
+	}
+	.searchMainBlock {
+		width: 25%;
+	}
+	.profile {
+		width: 25%;
+	}
+	.ul {
+		font-size: 1.4em;
 	}
 
 }
