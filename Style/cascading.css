@@ -632,6 +632,7 @@ mark {
 	}
 	.searchMainBlock {
 		width: 25%;
+		margin-left: 1.5em;
 	}
 	.profile {
 		width: 25%;
