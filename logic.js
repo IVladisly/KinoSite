@@ -8,9 +8,11 @@ new Swiper('.headerContainer', {
 
 
 
+
 });
 
 const slider = document.querySelectorAll('.recomendedBlock__inner');
+const sliderActor = document.querySelectorAll('.actorInfoMainBlock');
 
 slider.forEach((el) =>{
 	let NewSlider = new Swiper (el, {
@@ -38,6 +40,33 @@ slider.forEach((el) =>{
 				slidesPerView: 7,
 				slidesPerGroup: 6,
 			},
+
+		},
+	})
+});
+sliderActor.forEach((el) =>{
+	let NewSlider = new Swiper (el, {
+
+		navigation: {
+			nextEl: el.querySelector('.swiper-button-next'),
+			prevEl: el.querySelector('.swiper-button-prev'),
+		},
+		observer:true,
+		observerParents:true,
+		observerSlideChildren:true,
+
+		slidesPerView: 1,
+		slidesPerGroup: 1,
+		spaceBetween: 15,
+		speed: 400,
+
+		breakpoints: {
+			850: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+				spaceBetween: 25,
+			},
+			
 
 		},
 	})

@@ -20,8 +20,9 @@ p {
 }
 a {
 	text-decoration: none;
-	color: var(--ColoeText);
+	color: var(--TextColor);
 }
+
 
 :root {
 	--SubscribeButton: #1f9fce; 
@@ -380,6 +381,7 @@ mark {
 	will-change: transform;
 	transform-origin: center center;
 }
+
 .filmIMG__inner:hover {
 	transform: scale(1.1);
 }
@@ -463,6 +465,97 @@ mark {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+/* ============================ActorSlider============================ */
+.actorSliderBlock {
+	height: 19vw;
+	
+}
+.actorInfoMainBlock {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 1.5em 0;
+	
+}
+.actorSlider {
+	width: 100%;
+	height: 100%;	
+}
+.actorSlide {
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-template-areas:"actorIMG actorInfo"; 
+	cursor: pointer;
+}
+.actorImgBlock {
+	display: flex;
+	grid-area: actorIMG;
+	border-radius: .5em;
+	overflow: hidden;
+}
+.actorImg {
+	
+	max-width: 100%;
+	width: 100%;
+	object-fit: cover;
+	
+}
+.actorInfoBlock {
+	grid-area: actorInfo;
+	margin-left: .5em;
+	background-color: var(--RubyRed);
+	overflow: hidden;
+	border-radius: .5em;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows:15% 50% 20% 15%;
+	grid-template-areas:
+	"actorTitle"
+	"actorText"
+	"actorFilm"
+	"actorMore"
+	;
+}
+.actorTitle, .actorText, .actorFilm{
+	padding: .3em;
+}
+.actorTitle {
+	grid-area: actorTitle;
+}
+.actorText {
+	grid-area: actorText;
+	font-size: .6em;
+	margin: .4em 0;
+	max-height: 100%;
+	overflow-x: auto;
+
+}
+.actorFilm {
+	grid-area: actorFilm;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.actorMoreBlock {
+	display: flex;
+	padding: .2em;
+	justify-content: center;
+	background-color: var(--TextColor);
+	grid-area: actorMore;
+}
+.wiki{
+	display: flex;
+	justify-content: center;
+	width: 20%;
+}
+.actorMore {
+	object-fit: cover;
+	transition: var(--TransitionOptimal);
+	
+}
+.actorMore:hover {
+	transform: scale(1.1);
 }
 /* ============================Bottom============================ */
 .mainBottomBlock {
@@ -596,7 +689,6 @@ mark {
 	}
 }
 
-
 @media (max-width: 850px) {
 	.HeaderSlide_info {
 		height: 100%;
@@ -670,5 +762,26 @@ mark {
 	.popupContent {
 		height: 33%;
 	}
+	.actorSlide {
+		 
+	}
+	.actorSliderBlock {
+		height: 40vw; 
+	}
+	.actorImgBlock {
+		
+	}
+	.actorInfoBlock {
+	grid-template-columns: 100%;
+	grid-template-rows: 15% 65% 20%;
+	grid-template-areas:
+	"actorTitle"
+	"actorText"
+	"actorMore";
+	}
+	.actorMoreBlock {
+		opacity: .2;
+	}
+	
 
 }
