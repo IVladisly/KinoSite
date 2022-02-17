@@ -547,10 +547,11 @@ mark {
 .wiki{
 	display: flex;
 	justify-content: center;
-	width: 20%;
+	max-width: 10%;
+	width: 10%;
 }
 .actorMore {
-	object-fit: cover;
+	object-fit: contain;
 	transition: var(--TransitionOptimal);
 	
 }
@@ -684,8 +685,16 @@ mark {
 		border-radius: 0.4em;
 		overflow: hidden;
 	}
-	.swiper-button-next, .swiper-button-prev {
-		display: none;
+	body {
+		overflow-x: hidden;
+	}
+	.swiper-button-next:after, .swiper-button-prev:after {
+	height: 20px;
+	width: 40px;
+	color: var(--RubyRed);
+	font-size: 1em;
+	font-weight: bold;
+
 	}
 }
 
@@ -762,14 +771,8 @@ mark {
 	.popupContent {
 		height: 33%;
 	}
-	.actorSlide {
-		 
-	}
 	.actorSliderBlock {
 		height: 40vw; 
-	}
-	.actorImgBlock {
-		
 	}
 	.actorInfoBlock {
 	grid-template-columns: 100%;
@@ -781,6 +784,9 @@ mark {
 	}
 	.actorMoreBlock {
 		opacity: .2;
+	}
+	.actorMore{
+		max-width: 100%;
 	}
 	
 
