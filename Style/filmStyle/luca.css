@@ -1,0 +1,390 @@
+*{
+	margin: 0;
+	padding: 0;
+
+	font-size: 32px;
+	line-height: 1.4;
+	font-size: calc(14px + 17 * (100vw / 1600));
+
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+h1, h2, h3 {
+	font-size: calc(11px + 13 * (100vw / 1600));
+	color: var(--TitleColor);
+}
+p {
+	font-size: calc(9px + 11 * (100vw / 1600));
+	color: var(--TextColor);
+}
+a {
+	text-decoration: none;
+	color: var(--TextColor);
+}
+
+body {
+	background-color: var(--DarkBlue);
+	color: var(--TextColor);
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+}
+:root {
+	--SubscribeButton: #1f9fce; 
+	--DarkBlueOpacity: #11181dc9;
+	--DarkBlue: #152027;
+	--RubyRed: #9f173d;
+	--TextColor: #b6b6b6;
+	--TitleColor: #ece2e2;
+	--Popup: #152027c9;
+
+	--greatRating: #1dee1b;
+	--goodRating: #45e443;
+	--middleRating: #dbee1b;
+	--belowMiddleRating: #ee9b1b;
+	--badRating: #ee1b1b;
+
+	
+
+	--TransitionOptimal: 0.5s;
+	--TransitionMinimal: 0.3s;
+}
+.mainBodyBlock {
+	width: 100%;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding-top: 2em; 
+	overflow: hidden;
+	background-color: var(--DarkBlue);
+
+	height: auto;
+
+
+}
+.topMainBlock { 
+	width: 100%;
+	max-height: 615px;
+	height: 18em;
+	display: flex;
+	border-bottom: .5em solid var(--DarkBlue);
+}
+.pictureBlock { 
+	position: relative;
+	width: 30%;
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+}
+.poster {
+	border-radius: 2em 0 0;
+	max-width: 100%;
+	object-fit: cover;
+}
+.aboutFilm {
+	background-color: var(--DarkBlueOpacity);
+	border-radius:0 2em 0 0;
+	display: flex;
+	flex-direction: column;
+	padding-left: 3%;
+	width: 70%;
+}
+
+.span {
+	display: flex;
+	height: 1.5em;
+	color: var(--TitleColor);
+	font-weight: bold;
+	margin: .4em 0;
+	font-size: .8em;
+
+}
+.hourglass {
+	display: none;
+	width: 2%;
+	margin-right: .2em;
+	object-fit: contain;
+}
+.span p {
+	font-size: 1em;
+	margin: 0 .5em;
+	color: var(--TextColor);
+}
+.topMainBlock h2 {
+	margin: .4em auto; 
+	font-size: 1em;
+}
+
+
+.topLinkBlock {
+	width: 40%;
+	max-width: 100%;
+	height: 10%;
+
+	padding: .3em;
+	display: flex;
+	justify-content: space-around;
+
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	box-sizing: border-box;
+	
+	background-color: var(--RubyRed);
+
+	opacity: 0;
+	transition: ease-out var(--TransitionMinimal);
+	transform: translate(+100%);
+	border-radius: 1em 0 0 0; 
+
+}
+.topLinkBlock * {
+	transition: var(--TransitionMinimal);
+	will-change: transform;
+	transform-origin: center center;
+}
+.topLinkBlock *:hover {
+	transform: scale(1.1);
+}
+.pictureBlock:hover .topLinkBlock{
+	opacity: 1;
+	transform: translate(0%);
+}
+.topIcon {
+	object-fit: contain;
+	max-width: 100%;
+	margin: 0;
+}
+.link{
+	display: flex;
+}
+/* ======================Rating bar====================== */
+.ratingBlock {
+	display: flex;
+	align-items: center;
+	margin: 2% 0;
+}
+.ratingP {
+	color: var(--TextColor);
+	width: 10%;
+	display: flex;
+	align-items: center;
+	margin: .1em;
+}
+
+.ratingPercent {
+ 	margin-left: 1em;
+ 	color: var(--greatRating);
+}
+.ratingPercent.bad {
+	color: var(--badRating);
+}
+.ratingPercent.middle {
+	color: var(--middleRating);
+}
+.ratingPercent.belowmiddle{
+	color: var(--belowMiddleRating);
+}
+.ratingPercent.good {
+	color: var(--goodRating);
+}
+.bar {
+	display: flex;
+	align-items: center;
+
+	height: 30%;
+	border-radius: 10px;
+	overflow: hidden;
+	z-index: 0;
+
+	
+	width: 50%;
+
+	background-color: var(--DarkBlue);
+}
+.rating {
+	z-index: 1000;
+	background-color: var(--greatRating);
+	height: 100%;
+	float: left;
+	margin: 0;
+}
+.rating.good {
+	background-color: var(--goodRating);
+}
+.rating.middle {
+	background-color: var(--middleRating);
+}
+.rating.belowmiddle {
+	background-color: var(--belowMiddleRating);
+}
+.rating.bad {
+	background-color: var(--badRating);
+}
+/* ======================Content====================== */
+.contentBlock {
+	margin: 0 auto;
+	padding: .6em 1em; 
+	width: 100%;
+	max-width: 1650px; 
+	height: auto;
+	background-color: var(--DarkBlueOpacity);
+}
+.textContent {
+	margin: 2em;
+}
+
+.actorMainBlock {
+ 	width: 80%;
+ 	margin: 0 auto;
+
+ 	height: auto;
+ 	display: flex;
+ 	flex-wrap: wrap;
+}
+.actorBlock {
+	width: 20%;
+	height: auto;
+	cursor: pointer;
+	margin-bottom: .5em;
+}
+.imgBlock {
+	display: flex;
+	opacity: .7;
+	transition: var(--TransitionMinimal);
+}
+
+.imgBlock:hover {
+	opacity: 1;
+}
+.imgBlock img {
+	width: 100%;
+	max-height: 6em;
+	max-width: 6em;
+	
+	margin: 0 auto;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: top;
+	}
+
+.actorNameBlock {
+	text-align: center;
+	margin: .5em 0;
+
+}
+.actorNameBlock h3 {
+	font-size: .6em;
+}
+.actorNameBlock p {
+	margin-top: .2em;
+	font-size: .5em;
+} 
+
+/* ======================FilmBlock====================== */
+
+.filmMainBlock {
+	margin: 1em auto;
+	padding: 20px;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: var(--DarkBlueOpacity);
+
+
+}
+.film__innerBlock {
+	width: 60%;
+	height: 100%;
+}
+.filmPlayer {
+	width: 100%;
+
+}
+
+
+/*  ======================media====================== */
+
+@media (min-width: 2030px) {
+	.span {
+		margin: 0px;
+		font-size: 28px;
+	}
+	.topMainBlock h2 {
+		margin: .2em auto; 
+		font-size: 1em;
+	}
+}
+@media (max-width: 1400px) {
+	.actorMainBlock {
+		width: 100%;
+	}
+}
+@media (max-width: 1200px) {
+	.topMainBlock {
+		height: 40vw;
+	}
+	.span {
+		margin: .3em 0;
+		font-size: .7em;
+	}
+	.topMainBlock h2 {
+		margin: .2em auto; 
+		font-size: 1em;
+	}
+}
+@media (max-width: 900px){
+	.film__innerBlock {
+		width: 100%;
+	}
+	.actorBlock {
+		width: 25%;
+	}
+}
+@media (max-width: 600px) {
+	.span {
+		margin: .6em 0;
+		font-size: .7em;
+	}
+	.topMainBlock h2 {
+		margin: .5em auto; 
+		font-size: 1em;
+	}
+	.ratingBlock {
+		margin: .1em 0;
+	}		
+	.topMainBlock {
+		display: block;
+		border: none;
+			
+		height: auto;
+		max-height: none;
+			
+	}
+	.pictureBlock {
+		width: 100%;
+		justify-content: center;
+	}
+	.poster {
+		border-radius: 0;
+		max-width: 100%;
+		object-fit: cover;
+	}
+
+	.aboutFilm {
+		width: 100%;
+		display: flex;
+		border-radius: 0;
+			
+	}
+	.bar {
+		height: .5em;
+		margin-left: .8em;
+	}
+	.actorBlock {
+		width: 33.33%;
+	}
+}
+
