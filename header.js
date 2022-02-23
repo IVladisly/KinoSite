@@ -80,6 +80,10 @@ i++;
 
  }
 
+ const player = document.querySelector(".filmPlayer"); 
+
+ console.log (player);
+
 
 		
  

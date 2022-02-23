@@ -44,8 +44,8 @@ body {
 	--belowMiddleRating: #ee9b1b;
 	--badRating: #ee1b1b;
 
-	
-
+	--marginHeight: 1em;
+	--border: 1em;
 	--TransitionOptimal: 0.5s;
 	--TransitionMinimal: 0.3s;
 }
@@ -76,13 +76,13 @@ body {
 	display: flex;
 }
 .poster {
-	border-radius: 2em 0 0;
+	border-radius: var(--border) 0 0 var(--border);
 	max-width: 100%;
 	object-fit: cover;
 }
 .aboutFilm {
 	background-color: var(--DarkBlueOpacity);
-	border-radius:0 2em 0 0;
+	border-radius: 0 var(--border) var(--border) 0;
 	display: flex;
 	flex-direction: column;
 	padding-left: 3%;
@@ -222,20 +222,63 @@ body {
 }
 /* ======================Content====================== */
 .contentBlock {
-	margin: 0 auto;
+	margin: var(--marginHeight) auto;
 	padding: .6em 1em; 
 	width: 100%;
 	max-width: 1650px; 
 	height: auto;
 	background-color: var(--DarkBlueOpacity);
+	border-radius: var(--border);
 }
 .textContent {
 	margin: 2em;
 }
 
-.actorMainBlock {
- 	width: 80%;
- 	margin: 0 auto;
+/* ======================FilmBlock====================== */
+
+.filmMainBlock {
+	margin: var(--marginHeight) auto;
+	padding: 1em;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: var(--DarkBlueOpacity);
+	border-radius: var(--border);
+
+
+}
+.film__innerBlock {
+	width: 60%;
+	height: auto;
+}
+.filmPlayer {
+	width: 100%;
+	
+}
+/* ======================Creators====================== */
+
+.creatorsMainInfo {
+	width: 100%;
+	padding: 2em 0;
+	margin: var(--marginHeight) 0;
+	background-color: var(--DarkBlueOpacity);
+	border-radius: var(--border);
+}
+.creatorsMediumBlock {
+	width: 80%;
+	margin: 0 auto 1em;
+
+}
+.h3_mediumBlock {
+	font-size: 1em;
+	margin-bottom: 1.5em;
+	text-align: center;
+}
+.creators__innerBlock {
+ 	width: 100%;
 
  	height: auto;
  	display: flex;
@@ -260,14 +303,13 @@ body {
 	width: 100%;
 	max-height: 6em;
 	max-width: 6em;
-	
-	margin: 0 auto;
 	border-radius: 50%;
+	margin: 0 auto;
 	object-fit: cover;
 	object-position: top;
 	}
 
-.actorNameBlock {
+.creatorsNameBlock {
 	text-align: center;
 	margin: .5em 0;
 
@@ -280,31 +322,38 @@ body {
 	font-size: .5em;
 } 
 
-/* ======================FilmBlock====================== */
+/*  ======================Reward====================== */
 
-.filmMainBlock {
-	margin: 1em auto;
-	padding: 20px;
+.rewardMainBlock {
 	width: 100%;
+	padding: .5em;
+	margin: var(--marginHeight) 0;
 
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
-
+	
+	border-radius: var(--border);
 	background-color: var(--DarkBlueOpacity);
-
-
-}
-.film__innerBlock {
-	width: 60%;
-	height: 100%;
-}
-.filmPlayer {
-	width: 100%;
-
 }
 
-
+.reward {
+	text-align: center;
+	width: 20%;
+	margin: 1em;
+}
+.reward p:last-child{
+	opacity: .5;
+}
+.rewardIMG{
+	display: flex;
+	margin: 0 auto .5em;
+	width: 50%;
+}
+.rewardIMG img {
+	max-width: 100%;
+	object-fit: cover;
+}
 /*  ======================media====================== */
 
 @media (min-width: 2030px) {
@@ -338,9 +387,16 @@ body {
 @media (max-width: 900px){
 	.film__innerBlock {
 		width: 100%;
+		margin-top: .5em;
+	}
+	.filmMainBlock {
+		padding: 3% 0;
 	}
 	.actorBlock {
 		width: 25%;
+	}
+	.reward {
+		width: 33.33%;
 	}
 }
 @media (max-width: 600px) {
@@ -383,8 +439,12 @@ body {
 		height: .5em;
 		margin-left: .8em;
 	}
+	.creatorsMediumBlock {
+		width: 100%;
+	}
 	.actorBlock {
 		width: 33.33%;
 	}
+
 }
 

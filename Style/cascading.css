@@ -485,48 +485,6 @@ body {
 	.MainSliderBlock {
 		padding: 0;
 	}
-	.mainBottomBlock {
-		height: 40vw;
-	}
-
-	.bottomStageTop {
-	grid-template-areas: 
-	"link subscribeButton social"
-	"link subscribeButton social"
-	"link subscribeButton social";
-	}
-	.social {
-		flex-direction: column;
-	}
-	.socialNetwork {
-		width: 30%;
-	}
-	.mainHeadBlock {
-		height: 15vw;
-	}
-	.searchInput {
-		height: 10vw;
-	}
-	.header {
-		grid-template-columns: 25% 25% 25% 25%;
-		grid-template-areas:"logo empty search user";
-	}
-	.searchMainBlock {
-		width: 25%;
-		margin-left: 1.5em;
-	}
-	.profile {
-		width: 25%;
-	}
-	.ul {
-		font-size: 1.4em;
-	}
-	.searchMenu ol {
-		width: 100%;
-	}
-	.popupContent {
-		height: 33%;
-	}
 	.actorSliderBlock {
 		height: 40vw; 
 	}
