@@ -1,0 +1,452 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  min-width:100%;
+  min-height:100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  background-color: #000;
+  overflow: hidden;
+  
+}
+
+:root {
+	--SubscribeButton: #1f9fce; 
+	--DarkBlueOpacity: #11181dc9;
+	--DarkBlue: #152027;
+	--RubyRed: #9f173d;
+	--TextColor: #b6b6b6;
+	--TitleColor: #ece2e2;
+	--GoodRaiting: #1dee1b;
+	--Popup: #152027c9;
+
+	--TransitionOptimal: 0.5s;
+	--TransitionMinimal: 0.3s;
+}
+
+.contentMain {
+  width: 100%;
+  min-height: 100vh;
+  
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transition: all .7s;
+  
+  
+}
+.contentMain.disable {
+  min-height: 0;
+  height: 0;
+  opacity: 0;
+}
+.TVDiv {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-bottom: 6em;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+  
+  transition: .3s; 
+  
+  
+  
+}
+#tv-image {
+  max-width: 100%;
+  object-fit: cover;
+  
+  z-index: 5;
+  
+  
+  
+}
+.TVDiv.disable {
+  opacity: 0%;
+  
+  
+ 
+}
+#TVCenter {
+  width: 74%;
+  height: 21vw;
+  overflow: hidden;
+  display: flex;
+  position: absolute;
+  opacity: 0%;
+  margin-bottom: 1em;
+  
+  animation-name: TV;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  z-index: 0;
+}
+@keyframes TV{
+  25% { 
+    opacity: 0;
+  }
+  100%{
+    opacity: 80%;
+  }
+
+}
+.film {
+  width: 100%;
+  opacity: 100%;
+  object-fit: cover;
+  z-index: 100;
+  
+  
+  
+}
+#WelcomeTitle {
+  opacity: 0%;
+  font-size: 4em;
+  color: var(--RubyRed);
+  font-family: 'sans-sherif' ;
+  
+  animation-name: WelcomeTitle;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  
+  position: absolute;
+  top: 30%;
+  z-index: 1000;
+ 
+}
+
+@keyframes WelcomeTitle {
+  0% {
+    top: 25%;
+    opacity: 0%;
+    
+  } 
+  25% {
+    top: 25%;
+    opacity: 100%;  
+    transform: scale(100%);
+    color: var(--RubyRed);
+  }
+  100% {
+    top: -5%;
+    opacity: 100%;
+    transform: scale(50%);
+    color: var(--TextColor);
+    
+    
+     }
+}
+
+
+/* formMain */
+.formMain-Block {
+  width: 80%;
+  height: 25vw;
+  opacity: 0;
+  
+  
+  
+  
+  position: absolute;
+  padding: 1em;
+  
+  animation-name: formMain;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+
+#h2-firstLogIn {
+  font-size: 1.5em;
+  color: var(--TitleColor);
+  text-align: center;
+  margin: 2em 0 1em 0;
+  transition: var(--TransitionMinimal);
+  
+}
+
+
+.button-Block {
+  text-align: center;
+  margin: 0 0 1em;
+}
+
+.RegButton {
+  width: 180px;
+  height: 50px;
+ 
+  background-color: var(--DarkBlueOpacity);
+  border: 1px solid var(--RubyRed);
+  margin: 0 .8em;
+  border-radius: .5em;
+  color: var(--TextColor);
+  font-size: 1.2em;
+  transition: var(--TransitionOptimal);
+  
+  opacity: 70%;
+}
+
+.RegButton:hover {
+  opacity: 100%;
+  background-color: var(--RubyRed);
+}
+
+.button-Yes.active {
+  opacity: 0;
+  margin: 0 -.8em;
+
+}
+
+
+.button-No.disable {
+  opacity: 0;
+  margin: 0;
+  
+}
+
+.form_registration {
+  width: 70%;
+  height: 45px;
+  background-color: var(--DarkBlueOpacity);
+  display: flex;
+  border-radius: 1em;
+  
+  overflow: hidden;
+  padding: 0;
+  margin: 0 auto;
+  
+  opacity: 0;
+  transform: translateY(0);
+  transition: var(--TransitionOptimal);
+}
+
+
+#emailIn {
+  width: 75%;
+  height: 100%;
+  border: none;
+  color: var(--TextColor);
+  background-color: inherit;
+  margin: 0;
+  text-decoration: none;
+  border-radius: none;
+  outline: none;
+  font-size: 1.3em;
+  padding:0 0 0 1em;
+  transition: inherit;
+  
+  
+}
+.buttonEmailSucces {
+  width: 25%;
+  height: 100%;
+  background-color: var(--RubyRed);
+  color: var(--TextColor);
+  margin: 0;
+  border: none;
+  border-left: 1px solid var(--DarkBlue);
+  transition: inherit;
+}
+
+/*signUpFormBlock */
+.ContentMainBlockPasscode {
+  width: 100%;
+  height: 0;
+  background-color: var(--DarkBlue);
+  display: Grid;
+  padding: 0;
+  opacity: 0;
+  transition: all 1s;
+  
+}
+
+
+.ContentMainBlockPasscode.active {
+  height: 100vh;
+  max-width: 100%;
+  
+  grid-template-areas: "ipadFilm title" "ipadFilm regForm";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 15% 85%;
+  
+  
+}
+#h2block {
+  grid-area: title;
+  text-align: center;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#titleLotus {
+  font-size: 3em;
+  color: var(--TextColor);
+}
+.lineTitle {
+  
+  width: 25%;
+  height: 1px;
+  background-color: var(--TextColor);
+  margin: 0 1em;
+  border-radius: 1em;
+}
+#IpadVideoBlock {
+  grid-area: ipadFilm;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  
+}
+#ipadIMG {
+  max-width: 80%;
+  object-fit: contain;
+  
+  padding: 0;
+}
+
+.signUpFormBlock {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  background-color: var(--DarkBlueOpacity);
+  padding: 0;
+  
+  grid-area: regForm;
+  margin: 0 auto;
+  border-radius: 2em;
+  
+  z-index: 1000;
+  overflow: hidden;
+}
+
+
+
+
+.PasscodeBlock{
+  height: 10%;
+  width: 75%;
+  margin: .5em 0 .2em;
+  display: flex;
+  background-color: var(--DarkBlue);
+  color: var(--TextColor);
+  border: 1px solid var(--TextColor);
+  border-radius: 1em 0.2em 1em 0.2em;
+  
+  
+  overflow: hidden;
+  
+  opacity: 65%;
+  transition: all .6s;
+  
+}
+#emailBlock {
+  margin-bottom: 1.5em;
+}
+.inputPasscode {
+  padding: 0;
+  font-size: 1em;
+  text-align: center;
+  outline: none;
+  border: none;
+  width: 90%;
+  background-color: inherit;
+  
+}
+.passwordIconIMG {
+  padding: .2em;
+  max-width: 70%;
+  object-fit: contain;
+  width: 10%;
+  border-right: 1px solid var(--TextColor);
+  background-color: var(--DarkBlueOpacity);
+}
+
+#h2LogUp {
+  color: var(--TitleColor);
+  text-align: center;
+  margin: 1em 0 0;
+  font-size: 1.5em;
+  opacity: 80%;
+  height: 20%;
+}
+
+#submitLogUpButton {
+  width: 75%;
+  height: 10%;
+  padding: .5em .8em;
+  background-color: var(--RubyRed);
+  outline: none;
+  border: 1px solid var(--TextColor);
+  border-radius: 1em .2em 1em .2em;
+  margin: .5em 0;
+  opacity: 70%;
+  font-size: 1em;
+}
+
+.AboutPolicyLink {
+  height: 10%;
+  color: var(--RubyRed);
+  opacity: 50%;
+  text-decoration: none;
+  text-align: center; 
+  margin-top: .8em;
+  
+}
+#buttonLogIn {
+  width: 100%;
+  height: 15%;
+
+  /*background-image: linear-gradient( #9f173d, #393b96);*/
+  background: var(--DarkBlue);
+  color: var(--TextColor);
+  font-size: 1.5em;
+  opacity: 80%;
+  margin: .5em auto 0;
+  border-radius: 0; 
+  border: none;
+  z-index: 0;
+  box-shadow: 0 0 4px #000;
+  
+}
+#buttonLogIn.active {
+  
+  
+  
+}
+
+
+/*formMain animation*/
+
+@keyframes formMain {
+  0% {
+    opacity: 0;
+    bottom: 30%;
+  }
+  100% {
+    opacity: 100%;
+    
+    bottom: 0%;
+    padding: 0;
+  }
+}
+
+
+
+
+
+
