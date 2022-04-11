@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="contentMain">
+      <h1 id="WelcomeTitle">
+        LOTUS
+      </h1>
+      <div class="TVDiv">
+         <img src="TV.png" id="tv-image">
+        <div id="TVCenter">
+          <video src="Film.mp4" class="film" autoplay muted loop>
+          </video>
+        </div>
+        
+         
+      </div>
+     
+      
+      
+      <div class="formMain-Block">
+        
+        <h2 id="h2-firstLogIn">
+          Вы у нас впервые ?
+        </h2>
+        <div class="button-Block">
+          <button class="button-Yes RegButton">
+          ДА
+        </button>
+        <button class="button-No RegButton">
+          НЕТ
+        </button> 
+        </div> 
+        
+        <form class="formReg form_registration" name="emailform">
+          <input type="text" placeholder="email" id="emailIn" name="emailInput">
+          <button type="button" class="buttonEmailSucces">
+            Продолжить
+          </button>
+          
+        </form>
+      </div>
+      
+    </div>
+    <div class="ContentMainBlockPasscode">
+      <div id="h2block">
+        <span class="lineTitle"></span>
+        <h2 id="titleLotus">
+          Lotus
+        </h2>
+        <span class="lineTitle"></span>
+      </div>
+      <form class="signUpFormBlock" name="registrationForm" action="mail.txt">
+            <h2 id="h2LogUp"> Придумайте пароль </h2>    
+        <div class="PasscodeBlock" id="emailBlock">
+          <img src="Email.png" id="passwordIMG" class="passwordIconIMG">
+          <input type="text" class="inputPasscode" id="inputEmail" placeholder="email"> 
+        </div>
+        <div class="PasscodeBlock">
+          <img src="passwordIcon.png" id="passwordIMG" class="passwordIconIMG">
+          <input type="password" class="inputPasscode" id="inputPasscode" placeholder="Пароль">   
+        </div>
+        <div class="PasscodeBlock">
+          <img src="passwordIconAgain.png" id="passwordIMGAgain" class="passwordIconIMG">
+          <input type="password" class="inputPasscode" id="inputPasscode_again" placeholder="Повторите пароль">
+        </div>
+                       
+            
+            <button type="submit" id="submitLogUpButton">
+              Продолжить 
+            </button>
+            <a href="" class="AboutPolicyLink"> Правила конфидициальности </a>
+            <button type="button" id="buttonLogIn">
+             Войти
+            </button>
+      </form>
+      <div id="IpadVideoBlock">
+        <img src="iPad.png" id="ipadIMG">
+      </div>
+      
+    </div>
+    
+  </body>
+</html>
+
+
